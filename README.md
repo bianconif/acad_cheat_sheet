@@ -1,3 +1,9 @@
+# AutoCAD cheat sheet
+
+## Available languages:
+- ### English (coming soon)
+- ### [Italian](it/acad_cheat_sheet.pdf)
+
 ## License
 The material available in this repository is distributed under [Creative Commons Attribution-NonCommercial 3.0 Unported (CC BY-NC 3.0)](https://creativecommons.org/licenses/by-nc/3.0/).
 
