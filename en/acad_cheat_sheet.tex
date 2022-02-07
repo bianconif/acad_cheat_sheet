@@ -67,6 +67,19 @@
 
 \clearpage
 
+\section{Reference systems and coordinate insertion}
+\begin{longtable}{m{.3\linewidth}>{\centering\arraybackslash}p{.3\linewidth}>{\centering\arraybackslash}p{.3\linewidth}}
+\toprule
+\multirow{2}{*}{Reference system} & \multicolumn{2}{c}{Insertion mode} \\
+\cmidrule{2-3}
+ & Cartesian & Polar \\
+\midrule
+Global (WCS) & \multicolumn{1}{c}{*$x$,$y$} & \multicolumn{1}{c}{*$\rho<\theta$} \\
+User (UCS) & \multicolumn{1}{c}{$x$,$y$} & \multicolumn{1}{c}{$\rho<\theta$} \\
+Local & \multicolumn{1}{c}{@$x$,$y$} & \multicolumn{1}{c}{@$\rho<\theta$} \\
+\bottomrule
+\end{longtable}
+
 \section{Commands for creating graphical objects}
 
 \begin{center}
