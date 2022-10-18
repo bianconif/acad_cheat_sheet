@@ -140,74 +140,74 @@ Local & \multicolumn{1}{c}{@$x$,$y$} & \multicolumn{1}{c}{@$\rho<\theta$} \\
 
 \clearpage
 
-\section{Comandi per la modifica di entità grafiche}
+\section{Commands for editing graphical objects}
 
 \begin{center}
 \begin{longtable}{m{.2\linewidth}m{.2\linewidth}m{.25\linewidth}m{.25\linewidth}}
 \toprule
-    \multicolumn{2}{c}{\bfseries Comando} &
-    \multicolumn{1}{c}{\bfseries Funzione} &
-    \multicolumn{1}{c}{\bfseries Principali parametri} \\
+    \multicolumn{2}{c}{\bfseries Command} &
+    \multicolumn{1}{c}{\bfseries Action} &
+    \multicolumn{1}{c}{\bfseries Main parameters} \\
 \midrule
-\texttt{\_arrayclassic} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_arrayclassic.jpg} & Esegue una ripetizione lineare o circolare (polare) di uno o più oggetti. & 
+\texttt{\_arrayclassic} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_arrayclassic.jpg} & Creates copies of objects along a linear or circular array. & 
 \\
 \midrule
 \texttt{\_chamfer} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_chamfer.jpg}  
-& Crea uno smusso tra due linee. È necessario che le due linee (o i loro prolungamenti) si intersechino. & 
-\param{D}: definisce il valore delle distanze di smusso. L'ordine con cui vengono assegnate le distanze corrisponde all'ordine cui vengono selezionate le linee.
+& Chamfers two rectilinear edges. The two edges (or their extensions) must intersect. & 
+\param{D}: Sets the chamfer distance from the intersecting point of the first and second object. The input order reflects the order whereby the entities are selected.
 \\
 \midrule
-\texttt{\_copy} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_copy.jpg} & Copia un oggetto od un gruppo di oggetti. & 
-\param{S}: specifica il vettore spostamento
+\texttt{\_copy} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_copy.jpg} & Creates copies of objects. & 
+\param{S}: Sets the displacement vector
 \\	
 \midrule
-\texttt{\_erase} & & Elimina un oggetto od un gruppo di oggetti. Equivale alla pressione del tasto \keystroke{Canc}. & 
+\texttt{\_erase} & & Deletes the selected objects (same effect as pressing \keystroke{Canc}). & 
 \\	
 \midrule
-\texttt{\_explode} & & Divide un oggetto o un gruppo di oggetti in parti separate (opposto di \texttt{\_join}). & 
+\texttt{\_explode} & & Splits an object into separate parts (opposite effect than \texttt{\_join}). & 
 \\	
 \midrule
-\texttt{\_extend} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_extend.jpg} & Prolunga uno o più oggetti fini ad incontrare un altro oggetto (limite dell'estensione). Occorre selezionare prima il limite dell'estensione e poi l'oggetto da estendere.  & 
+\texttt{\_extend} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_extend.jpg} & Extends objects to meet the edges of other objects.  & 
 \\	
 \midrule
-\texttt{\_fillet} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_fillet.jpg} & Crea un raccordo tra due linee. È necessario che le due linee (o i loro prolungamenti) si intersechino. & 
-\param{RA}: definisce il valore del raggio di raccordo.
+\texttt{\_fillet} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_fillet.jpg} & Fillets the edges of two 2D objects by creating an arc of given radius. The two edges (or their extensions) must intersect & 
+\param{RA}: Sets the fillet radius.
 \\
 \midrule
-\texttt{\_intersect} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_intersect.jpg} & Intersezione booleana (AND) tra due figure chiuse. È necessario che le due figure siano previamente convertite in regioni attraverso il comando \texttt{\_region}. & 
+\texttt{\_intersect} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_intersect.jpg} & Returns the intersection (Boolean \texttt{AND}) between two closed objects. The objects must be previously converted into regions through \texttt{\_region}. & 
 \\
 \midrule
-\texttt{\_join} & & Unisce linee, polilinee, spline ed archi contigui (opposto di \texttt{\_explode}). & 
+\texttt{\_join} & & Joins lines, polylines, splines and adjacent arcs (opposite effect than \texttt{\_explode}). & 
 \\
 \midrule
-\texttt{\_mirror} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_mirror.jpg} & Riflette un oggetto o un gruppo di oggetti rispetto ad un asse. & 
-\param{N}: gli oggetti sorgente non vengono cancellati (esegue una copia).
+\texttt{\_mirror} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_mirror.jpg} & Mirrors objects across a given axis. & 
+\param{N}: Keeps the source objects (creates a copy).
 
-\param{S}: gli oggetti sorgente vengono cancellati.
+\param{S}: Removes the source objects.
 \\		
 \midrule
-\texttt{\_move} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_move.jpg} & Sposta un oggetto o un gruppo di oggetti. & 
-\param{S}: specifica il vettore spostamento.
+\texttt{\_move} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_move.jpg} & Moves objects. & 
+\param{S}: Sets the displacement vector.
 \\			
 \midrule
-\texttt{\_offset} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_offset.jpg} & Crea una copia di un oggetto mantenendo uno spessore assegnato rispetto all'oggetto originale.  & 
+\texttt{\_offset} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_offset.jpg} & Offsets an object at a specified distance.  & 
 \\			
 \midrule
-\texttt{\_rotate} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_rotate.jpg} & Ruota un oggetto od un gruppo di oggetti. & 
-\param{C}: crea una copia (gli oggetti sorgente non vengono cancellati).
+\texttt{\_rotate} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_rotate.jpg} & Rotates objects. & 
+\param{C}: Keeps the original objects (creates a copy).
 \\	
 \midrule
-\texttt{\_scale} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_scale.jpg} & Applica una trasformazione di scala ad uno o più oggetti. & 
-\param{C}: crea una copia (gli oggetti sorgente non vengono cancellati).
+\texttt{\_scale} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_scale.jpg} & Applies a scale transform. & 
+\param{C}: Keeps the original objects (creates a copy).
 \\	
 \midrule
-\texttt{\_subtract} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_subtract.jpg} & Differenza booleana tra due figure chiuse. È necessario che le due figure siano previamente convertite in regioni attraverso il comando \texttt{\_region}. & 
+\texttt{\_subtract} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_subtract.jpg} & Returns the difference (Boolean \texttt{XOR}) between two closed objects. The objects must be previously converted into regions through \texttt{\_region}. & 
 \\
 \midrule
-\texttt{\_trim} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_trim.jpg} & Ritaglia uno o più oggetti utilizzando altri oggetti come utensili di taglio. Si selezionano prima gli oggetti utensile e poi quelli da tagliare.  & 
+\texttt{\_trim} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_trim.jpg} & Trims objects to meet the edges of other objects.  & 
 \\	
 \midrule
-\texttt{\_union} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_union.jpg} & Unione booleana (OR) tra due figure chiuse. È necessario che le due figure siano previamente convertite in regioni attraverso il comando \texttt{\_region}. & 
+\texttt{\_union} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_union.jpg} & Returns the union (Boolean \texttt{OR}) between two closed objects. The objects must be previously converted into regions through \texttt{\_region}. & 
 \\
 \bottomrule
 \end{longtable}
