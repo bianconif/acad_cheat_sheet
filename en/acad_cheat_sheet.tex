@@ -61,10 +61,10 @@
 \thispagestyle{empty}
 
 \vspace{-1.0cm}
-\noindent Up-to-date with AutoCAD 2022 (some commands may not work with previous versions). Last revised on \today.
+\noindent Up-to-date with AutoCAD 2023 (some commands may not work with previous versions). Last revision: \today.
 
 \tableofcontents
-
+	
 \clearpage
 
 \section{Reference systems and coordinate insertion}
@@ -244,70 +244,70 @@ Local & \multicolumn{1}{c}{@$x$,$y$} & \multicolumn{1}{c}{@$\rho<\theta$} \\
 
 \clearpage
 
-\section{Comandi per l'inserimento del testo e delle annotazioni}
+\section{Commands for inserting text and annotations}
 
 \begin{center}
 \begin{longtable}{m{.2\linewidth}m{.2\linewidth}m{.25\linewidth}m{.25\linewidth}}
 \toprule
-    \multicolumn{2}{c}{\bfseries Comando} &
-    \multicolumn{1}{c}{\bfseries Funzione} &
+    \multicolumn{2}{c}{\bfseries Command} &
+    \multicolumn{1}{c}{\bfseries Action} &
     \multicolumn{1}{c}{\bfseries Principali parametri} \\
 \midrule
-\texttt{\_mtext} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_mtext.jpg} & Inserisce del testo multilinea. & 
-\param{A}: imposta l'altezza del carattere.
+\texttt{\_mtext} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_mtext.jpg} & Inserts multi-line text. & 
+\param{H}: Specifies the text height.
 
-\param{G}: modifica l'ancoraggio del testo e/o adatta la larghezza del carattere (vedi \texttt{\_text}).
+\param{J}: Sets text justification and flow in relation to the text boundary (see \texttt{\_text}).
 
-\param{SP}: imposta lo spazio tra i caratteri.
+\param{W}: Specifies the width of the text boundary.
 \\
 \midrule
-\texttt{\_qleader} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_qleader.jpg} & Genera una freccia. \\
+\texttt{\_qleader} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_qleader.jpg} & Creates a leader and leader annotation. \\
 \midrule
-\texttt{\_text} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_text.jpg} & Inserisce del testo a riga singola. & 
-\param{G}: modifica l'ancoraggio del testo e/o adatta la larghezza del carattere. Alcune possibili opzioni:
+\texttt{\_text} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_text.jpg} & Inserts single-line text. & 
+\param{J}: Sets text justification and flow in relation to the text boundary. Possible options:
 \begin{itemize}
-\item \param{AS} (ancoraggio in alto a sinistra)
-\item \param{AC} (ancoraggio in alto al centro)
-\item \param{AD} (ancoraggio in alto a destra)
-\item \param{MS} (ancoraggio in mezzo a sinistra)
-\item \param{MC} (ancoraggio in mezzo al centro)
-\item \param{MD} (ancoraggio in mezzo a destra)
-\item \param{BS} (ancoraggio in basso a sinistra)
-\item \param{BC} (ancoraggio in basso al centro)
-\item \param{BD} (ancoraggio in basso a destra)
-\item \param{T} (adatta la larghezza del carattere alla lunghezza complessiva della linea di testo).
+\item \param{TL} (Top left)
+\item \param{TC} (Top centre)
+\item \param{TR} (Top right)
+\item \param{ML} (Middle left)
+\item \param{MC} (Middle centre)
+\item \param{MR} (Middle right)
+\item \param{BL} (Bottom left)
+\item \param{BC} (Bottom centre)
+\item \param{BR} (Bottom right)
 \end{itemize}
+\item \param{W} Specifies the width of the text boundary; words wrap to fit the width.
 \\
 \midrule
-\texttt{\_tolerance} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_tolerance.jpg} & Genera simboli per tolleranze geometriche. \\
+\texttt{\_tolerance} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_tolerance.jpg} & Creates symbols for geometric tolerances and datums. \\
 \midrule
-\texttt{\_centerline} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_centerline.jpg} & Disegna l'asse mediano tra due rette parallele. & 
+\texttt{\_centerline} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_centerline.jpg} & Draws the axis between two parallel or non-parallel lines. & 
 \\
 \midrule
-\texttt{\_centermark} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_centermark.jpg} & Disegna gli assi di una circonferenza. & 
+\texttt{\_centermark} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_centermark.jpg} & Draws the centre mark of a circle or arc. & 
 \\
 \bottomrule
 \end{longtable}
 \end{center}
 
-\subsection{Inserimento di caratteri speciali}
+\subsection{Inserting special characters}
 
 \vspace{\baselineskip}
 
 \begin{center}
 \begin{tabular}{lccc}
 \toprule
-\textbf{Denominazione} & \textbf{Simbolo} & \textbf{Sequenza AutoCAD} & \textbf{Sequenza Unicode}\\
+\textbf{Property name} & \textbf{Symbol} & \textbf{AutoCAD sequence} & \textbf{Unicode sequence}\\
 \midrule
-Diametro & \o & \%\%c & \textbackslash U+00B0 \\
+Diameter & \o & \%\%c & \textbackslash U+00B0 \\
 \midrule
-Esigenza d'inviluppo & \circled{E} & -- & \textbackslash U+24BA \\
+Envelope requirement & \circled{E} & -- & \textbackslash U+24BA \\
 \midrule
-Gradi & $^{\circ}$ & \%\%d & \textbackslash U+2205 \\
+Degrees & $^{\circ}$ & \%\%d & \textbackslash U+2205 \\
 \midrule
-Più o meno & $^{\pm}$ & \%\%p & \textbackslash U+00B1  \\
+Plus/minus & $^{\pm}$ & \%\%p & \textbackslash U+00B1  \\
 \midrule
-Quadrato & $\msquare$ & -- & \textbackslash U+25A1 \\
+Square & $\msquare$ & -- & \textbackslash U+25A1 \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -315,30 +315,30 @@ Quadrato & $\msquare$ & -- & \textbackslash U+25A1 \\
 \noindent
  
 
-\subsection{Inserimento di caratteri speciali attraverso font \texttt{gdt}}
+\subsection{Inserting special characters via \texttt{gdt} font}
 
 \vspace{\baselineskip}
 
 \begin{center}
 \begin{tabular}{lcc}
 \toprule
-\textbf{Denominazione} & \textbf{Simbolo} & \textbf{Sequenza AutoCAD} \\
+\textbf{Property name} & \textbf{Symbol} & \textbf{AutoCAD sequence} \\
 \midrule
-Diametro & \o & n \\
+Diameter & \o & n \\
 \midrule
-Quadrato & $\msquare$ & o \\
+Square & $\msquare$ & o \\
 \midrule
-\raisebox{0pt}{Lamatura} & \includegraphics[width = 10pt, keepaspectratio]{../images/jpg/hole-counterbore.jpg} & \raisebox{0pt}{v} \\
+\raisebox{0pt}{Counterbore} & \includegraphics[width = 10pt, keepaspectratio]{../images/jpg/hole-counterbore.jpg} & \raisebox{0pt}{v} \\
 \midrule
-\raisebox{0pt}{Svasatura} & \includegraphics[width = 10pt, keepaspectratio]{../images/jpg/hole-countersink.jpg} & \raisebox{0pt}{w} \\
+\raisebox{0pt}{Countersink} & \includegraphics[width = 10pt, keepaspectratio]{../images/jpg/hole-countersink.jpg} & \raisebox{0pt}{w} \\
 \midrule
-\raisebox{5pt}{Profondità} & \includegraphics[width = 10pt, keepaspectratio]{../images/jpg/hole-depth.jpg} & \raisebox{5pt}{x} \\
+\raisebox{5pt}{Deep/Depth} & \includegraphics[width = 10pt, keepaspectratio]{../images/jpg/hole-depth.jpg} & \raisebox{5pt}{x} \\
 \midrule
-Conicità & \includegraphics[height=\fontcharht\font`\B, keepaspectratio]{../images/jpg/GDandT_Conical_Taper_Symbol.jpg} & y \\
+Taper & \includegraphics[height=\fontcharht\font`\B, keepaspectratio]{../images/jpg/GDandT_Conical_Taper_Symbol.jpg} & y \\
 \midrule
-Massimo materiale & \circled{M} & m \\
+Maximum material requirement & \circled{M} & m \\
 \midrule
-Minimo materiale & \circled{L} & l \\
+Minimum material requirement & \circled{L} & l \\
 \bottomrule
 \end{tabular}
 \end{center}
