@@ -1,7 +1,7 @@
 # AutoCAD cheat sheet
 
 ## Available languages:
-- ### English (coming soon)
+- ### [English](en/acad_cheat_sheet.pdf)
 - ### [Italian](it/acad_cheat_sheet.pdf)
 
 ## License
