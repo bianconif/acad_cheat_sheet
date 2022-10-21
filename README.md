@@ -1,5 +1,5 @@
 # AutoCAD cheat sheet
-A concise summary of the most common AutoCAD commands for two-dimensional drafting.
+A concise guide to the most common AutoCAD commands for two-dimensional drafting.
 
 ## Available languages:
 - ### [English](en/acad_cheat_sheet.pdf)
