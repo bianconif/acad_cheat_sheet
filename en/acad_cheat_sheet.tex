@@ -80,7 +80,7 @@ Local & \multicolumn{1}{c}{@$x$,$y$} & \multicolumn{1}{c}{@$\rho<\theta$} \\
 \bottomrule
 \end{longtable}
 
-\section{Commands for creating graphical objects}
+\section{Creating graphical objects}
 
 \begin{center}
 \begin{longtable}{m{.1\linewidth}m{.2\linewidth}m{.3\linewidth}m{.3\linewidth}}
@@ -140,7 +140,7 @@ Local & \multicolumn{1}{c}{@$x$,$y$} & \multicolumn{1}{c}{@$\rho<\theta$} \\
 
 \clearpage
 
-\section{Commands for editing graphical objects}
+\section{Editing graphical objects}
 
 \begin{center}
 \begin{longtable}{m{.2\linewidth}m{.2\linewidth}m{.25\linewidth}m{.25\linewidth}}
@@ -215,7 +215,7 @@ Local & \multicolumn{1}{c}{@$x$,$y$} & \multicolumn{1}{c}{@$\rho<\theta$} \\
 
 \clearpage
 
-\section{Commands for inserting dimensions and managing their style}
+\section{Inserting dimensions and managing their style}
 
 \begin{center}
 \begin{longtable}{m{.2\linewidth}m{.2\linewidth}m{.25\linewidth}m{.25\linewidth}}
@@ -244,7 +244,7 @@ Local & \multicolumn{1}{c}{@$x$,$y$} & \multicolumn{1}{c}{@$\rho<\theta$} \\
 
 \clearpage
 
-\section{Commands for inserting text and annotations}
+\section{Inserting text and annotations}
 
 \begin{center}
 \begin{longtable}{m{.2\linewidth}m{.2\linewidth}m{.25\linewidth}m{.25\linewidth}}
@@ -345,71 +345,71 @@ Minimum material requirement & \circled{L} & l \\
 
 \clearpage
 
-\section{Comandi per il controllo del sistema, dell'interfaccia utente e delle proprietà degli oggetti}
+\section{Managing user interface, system variables and object properties}
 \begin{center}
 \begin{longtable}{m{.2\linewidth}m{.33\linewidth}m{.33\linewidth}}
 \toprule
-    \multicolumn{1}{c}{\bfseries Comando} &
-    \multicolumn{1}{c}{\bfseries Funzione} &
-    \multicolumn{1}{c}{\bfseries Principali parametri} \\
+    \multicolumn{1}{c}{\bfseries Command} &
+    \multicolumn{1}{c}{\bfseries Action} &
+    \multicolumn{1}{c}{\bfseries Main parameters} \\
 \midrule
-\texttt{\_dynmode} & Attiva/disattiva la modalità input dinamico. & 
-\param{1}: attiva la modalità input dinamico.
+\texttt{\_dynmode} & Sets the dynamic input mode. & 
+\param{1}: Turns dynamic input on.
 
-\param{0}: disattiva la modalità input dinamico.
+\param{0}: Turns dynamic input off.
 \\
 \midrule
-\texttt{\_layer} & Apre la finestra che permette la creazione, rimozione e modifica delle proprietà dei layer. & 
+\texttt{\_layer} & Opens the window for creating, deleting and modifying layers. & 
 \\
 \midrule
-\texttt{\_matchprop} & Assegna ad uno o più oggetti le proprietà dell'oggetto sorgente (equivalente a copia formato di Microsoft Word). & 
+\texttt{\_matchprop} & Applies the properties of a selected object to other objects (similar to paste format in Microsoft Word). & 
 \\
 \midrule
-\texttt{\_navbardisplay} & Attiva/disattiva la visualizzazione della barra di navigazione. & 
-\param{1}: attiva la visualizzazione della barra di navigazione.
+\texttt{\_navbardisplay} & Controls the display of the navigation bar. & 
+\param{1}: Displays the navigation bar.
 
-\param{0}: disattiva la visualizzazione della barra di navigazione.
+\param{0}: Hides the navigation bar.
 \\
 \midrule
-\texttt{\_orthomode} & Attiva/disattiva la modalità disegno ortogonale. & 
-\param{1}: attiva la modalità disegno ortogonale.
+\texttt{\_orthomode} & Constrains cursor movement parallel to UCS axes. & 
+\param{1}: Turns orthogonal mode on.
 
-\param{0}: disattiva la modalità disegno ortogonale.
+\param{0}: Turns orthogonal mode off.
 \\
 \midrule
-\texttt{\_osnap} & Apre la finestra che permette la gestione degli snap ad oggetto. & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/png/_osnap.png}
+\texttt{\_osnap} & Opens the window for managing object snaps. & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/png/_osnap.png}
 \\
 \midrule
-\texttt{\_polarmode} & Attiva/disattiva la modalità disegno ad angoli predefiniti. & 
-\param{1}: attiva la modalità disegno ad angoli predefiniti.
+\texttt{\_polarang} & Sets the polar angle increment for tracking. & 
+\param{0}: No polar tracking.
 
-\param{0}: disattiva la modalità disegno ad angoli predefiniti.
+\param{]0,90]}: Polar tracking by steps of the given value.
 \\
 \midrule
-\texttt{\_ptype} & Attiva la finestra per la modifica dello stile punti  & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/png/_ptype.png} 
+\texttt{\_ptype} & Opens the window for setting the display style and size of point objects.  & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/png/_ptype.png} 
 \\
 \midrule
-\texttt{\_qselect} & Attiva la finestra di selezione rapida di oggetti & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/png/_qselect.png} 
+\texttt{\_qselect} & Selects objects based on filtering criteria. & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/png/_qselect.png} 
 \\
 \midrule
-\texttt{\_regen} & Rigenera l'intero disegno. Ricalcola le posizioni e la visibilità di tutti gli oggetti contenuti nella finestra corrente. & 
+\texttt{\_regen} & Regenerates the drawing in the current viewport. Recomputes the locations and visibility of all objects in the current viewport. & 
 \\
 \midrule
-\texttt{\_redraw} & Rigenera la visualizzazione nella finestra corrente. & 
+\texttt{\_redraw} & Refreshes the display in the current viewport. & 
 \\
 \midrule
-\texttt{\_ucs} & Sposta il sistema di riferimento utente (UCS). & 
+\texttt{\_ucs} & Sets the origin and orientation of the UCS. & 
 \\
 \midrule
-\texttt{\_ucsicon} & Attiva/disattiva la visualizzazione del sistema di riferimento utente (UCS). & 
-\param{ON}: visualizza l'icona UCS.
+\texttt{\_ucsicon} & Controls the appearance of the UCS icon. & 
+\param{ON}: Shows UCS icon.
 
-\param{OF}: disattiva la visualizzazione dell'icona UCS.
+\param{OF}: Hides UCS icon.
 
-\param{OR}: visualizza l'icona in corrispondenza dell'origine (0,0,0) dell'UCS corrente.
+\param{OR}: Displays the icon at the origin (0,0,0) of the UCS.
 \\
 \midrule
-\texttt{\_units} & Permette di impostare le unità di misura del disegno e la precisione (numero di cifre decimali) delle dimensioni lineari ed angolari.
+\texttt{\_units} & Opens the dialogue box to control format, precision and other settings used to display coordinates, distances and angles.
 \\
 \bottomrule
 \end{longtable}
@@ -417,57 +417,57 @@ Minimum material requirement & \circled{L} & l \\
 
 \clearpage
 
-\section{Principali scorciatoie da tastiera}
+\section{Keyboard shortcuts}
 
 \begin{center}
 \begin{longtable}{m{.2\textwidth}m{.7\textwidth}m{.1\textwidth}}
 \toprule
-    \multicolumn{1}{c}{\bfseries Tasto} &
-    \multicolumn{1}{c}{\bfseries Funzione/i}\\
+    \multicolumn{1}{c}{\bfseries Key} &
+    \multicolumn{1}{c}{\bfseries Function(s)}\\
 \midrule
-\keystroke{Canc} & Cancella gli oggetti selezionati. \\
+\keystroke{Canc} & Deletes the selected objects. \\
 \midrule
-\keystroke{Ctrl}+\keystroke{B} & Attiva/disattiva lo snap a griglia. \\
+\keystroke{Ctrl}+\keystroke{B} & Turns the grid snap on/off. \\
 \midrule
-\keystroke{Ctrl}+\keystroke{O} & Apre un disegno esistente. \\
+\keystroke{Ctrl}+\keystroke{O} & Opens an existing document. \\
 \midrule
-\keystroke{Ctrl}+\keystroke{Q} & Chiude il programma. \\
+\keystroke{Ctrl}+\keystroke{Q} & Closes the applications. \\
 \midrule
-\keystroke{Ctrl}+\keystroke{Z} & Elimina l'ultima operazione eseguita. \\
+\keystroke{Ctrl}+\keystroke{Z} & Undoes the previous action. \\
 \midrule
-\keystroke{Ctrl}+\keystroke{Y} & Ripristina l'ultima operazione eseguita (annulla l'annullamento). \\
+\keystroke{Ctrl}+\keystroke{Y} & Redoes the previous action (reverses a previous undo). \\
 \midrule
-\keystroke{Ctrl}+\keystroke{9} & Visualizza/nasconde la riga dei comandi. \\
+\keystroke{Ctrl}+\keystroke{9} & Hides/displays the command line. \\
 \midrule
 \keystroke{Esc} & 
-Esce da un comando. 
+Exits a command. 
 
-Deseleziona tutti gli oggetti selezionati.
+Deselects all objects.
 \\
 \midrule
 \keystroke{Invio} & 
-Termina un comando, l'inserimento di un parametro o la selezione di oggetti all'interno di un comando. 
+Finalises a command, the input of a parameter or the selection of objects within one command. 
 
-Ripete l'ultimo comando eseguito.
+Repeats the latest command.
 \\
 \midrule
 \keystroke{F3} & 
-Attiva/disattiva gli snap ad oggetto.\\
+Turns object snap on/off.\\
 \midrule
 \keystroke{F8} & 
-Attiva/disattiva la modalità di disegno `ortogonale'.\\
+Turns orthogonal mode on/off.\\
 \midrule
 \keystroke{F10} & 
-Attiva/disattiva la modalità di disegno `puntamento polare'.\\
+Turns polar tracking on/off.\\
 \midrule
 \keystroke{F11} & 
-Attiva/disattiva il puntamento ad oggetto (linee di riferimento).\\
+Turns object snap tracking on/off.\\
 \midrule
 \keystroke{F12} & 
-Attiva/disattiva la modalità di `input dinamico'.\\
+Turns dynamic mode on (but not off).\\
 \midrule
-\keystroke{$\Uparrow$}, \keystroke{Shift} & 
-Premuto assieme al tasto sinistro del mouse permette di rimuovere (deselezionare) uno o più oggetti da un insieme di selezione. \\
+\keystroke{$\Uparrow$}, \keystroke{Shift} &
+Removes objects from the current selection if pressed or held down while selecting objects. \\
 \bottomrule
 \end{longtable}
 \end{center}
