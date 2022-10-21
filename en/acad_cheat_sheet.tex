@@ -1,0 +1,475 @@
+%\documentclass[final, onecolumn, 3p]{elsarticle}
+\documentclass[..]{../IEEEphot}
+\usepackage{array,multirow}
+
+%******************************************
+%*************** My packages **************
+%******************************************
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage[utf8]{inputenc}
+\usepackage{longtable}
+\usepackage{times}
+\usepackage{textcomp}
+\usepackage[svgnames]{xcolor}
+\usepackage{scalerel}
+\usepackage{keystroke}
+%******************************************
+%******************************************
+%******************************************
+
+
+%******************************************
+%*************** My commands **************
+%******************************************
+
+%Circled characters
+\makeatletter
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+    \node[shape=circle, draw, inner sep=1pt, 
+        minimum height={\f@size*1.6},] (char) {\vphantom{WAH1g}#1};}}
+\makeatother
+%******************************************
+%******************************************
+%******************************************
+
+\newcommand{\param}[1]{\colorbox{LightSlateGray}{\color{Navy}\texttt{\textbf{#1}}}}
+
+\newcolumntype{z}[1]{>{\centering\arraybackslash}m{#1}}% a centered m-type column
+\renewcommand*\multirowsetup{\centering}% default is \raggedright
+
+\def\msquare{\mathord{\scalerel*{\Box}{gX}}}
+
+
+
+\begin{document}
+
+\title{AutoCAD$^{\text{\textregistered}}$ cheat sheet}
+
+\author{Francesco~Bianconi}
+
+\affil{Department of Engineering\\ Università degli Studi di Perugia \\ Via Goffredo Duranti, 93 -- 06125 Perugia (Italy)\\ \texttt{bianco@ieee.org} \\} 
+
+\maketitle
+% * <john.hammersley@gmail.com> 2015-02-09T12:07:31.197Z:
+%
+%  Click the title above to edit the author information and abstract
+%
+\thispagestyle{empty}
+
+\vspace{-1.0cm}
+\noindent Up-to-date with AutoCAD 2023 (some commands may not work with previous versions). Last revision: \today.
+
+\tableofcontents
+	
+\clearpage
+
+\section{Reference systems and coordinate insertion}
+\begin{longtable}{m{.3\linewidth}>{\centering\arraybackslash}p{.3\linewidth}>{\centering\arraybackslash}p{.3\linewidth}}
+\toprule
+\multirow{2}{*}{Reference system} & \multicolumn{2}{c}{Insertion mode} \\
+\cmidrule{2-3}
+ & Cartesian & Polar \\
+\midrule
+Global (WCS) & \multicolumn{1}{c}{*$x$,$y$} & \multicolumn{1}{c}{*$\rho<\theta$} \\
+User (UCS) & \multicolumn{1}{c}{$x$,$y$} & \multicolumn{1}{c}{$\rho<\theta$} \\
+Local & \multicolumn{1}{c}{@$x$,$y$} & \multicolumn{1}{c}{@$\rho<\theta$} \\
+\bottomrule
+\end{longtable}
+
+\section{Creating graphical objects}
+
+\begin{center}
+\begin{longtable}{m{.1\linewidth}m{.2\linewidth}m{.3\linewidth}m{.3\linewidth}}
+\toprule
+    \multicolumn{2}{c}{\bfseries Command} &
+    \multicolumn{1}{c}{\bfseries Action} &
+    \multicolumn{1}{c}{\bfseries Main parameters} \\
+\midrule
+\texttt{\_arc} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_arc.jpg}
+& Creates a circular arc. & 
+\param{C}: Accepts the centre as the first input (instead of the starting point).
+\\			
+\midrule
+\texttt{\_circle} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_circle.jpg} 
+& Creates a full circle. & 
+\param{D}: Accepts the diameter instead of the radius.
+
+\param{3P}: Generates a circle based on three points.
+
+\param{2P}: Generates a circle based on two diametrically opposite points.
+
+\param{T}: Generates a circle tangent to three objects.
+\\	
+
+\midrule
+\texttt{\_ellipse} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_ellipse.jpg}
+& Creates a full ellipse or an elliptical arc. & 
+\param{A}: Generates an elliptical arc (instead of a full ellipse).
+
+\param{C}: Generates an ellipse or an elliptical arc starting from the centre.
+\\
+\midrule
+\texttt{\_hatch} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_hatch.jpg} & Hatches a closed region & 
+\\
+\midrule
+\texttt{\_line} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_line.jpg} & Generates a single line or a polyline. & 
+\param{C}: Closes the polyline (only active when there the polyline has at least three points). \\
+\midrule
+\texttt{\_point} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_point.jpg} & Generates one point. &  \\	
+\midrule
+\texttt{\_polygon} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_polygon.jpg} & Generates an inscribed or circumscribed regular polygon. & 
+\param{C}: Generates a circumscribed polygon.
+
+\param{I}: Generates an inscribed polygon.  \\
+\midrule
+\texttt{\_rectang} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_rectang.jpg} & Generates a rectangle. & 
+\param{C}: Defines the dimensions of the chamfers (for a rectangle with chamfered vertices).
+
+\param{R}: Defines the radius of the fillets (for a rectangle with rounded vertices).
+
+\param{Q}: Defines the width and height of the rectangle.
+
+\\
+\bottomrule
+\end{longtable}
+\end{center}
+
+\clearpage
+
+\section{Editing graphical objects}
+
+\begin{center}
+\begin{longtable}{m{.2\linewidth}m{.2\linewidth}m{.25\linewidth}m{.25\linewidth}}
+\toprule
+    \multicolumn{2}{c}{\bfseries Command} &
+    \multicolumn{1}{c}{\bfseries Action} &
+    \multicolumn{1}{c}{\bfseries Main parameters} \\
+\midrule
+\texttt{\_arrayclassic} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_arrayclassic.jpg} & Creates copies of objects along a linear or circular array. & 
+\\
+\midrule
+\texttt{\_chamfer} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_chamfer.jpg}  
+& Chamfers two rectilinear edges. The two edges (or their extensions) must intersect. & 
+\param{D}: Sets the chamfer distance from the intersecting point of the first and second object. The input order reflects the order whereby the entities are selected.
+\\
+\midrule
+\texttt{\_copy} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_copy.jpg} & Creates copies of objects. & 
+\param{S}: Sets the displacement vector
+\\	
+\midrule
+\texttt{\_erase} & & Deletes the selected objects (same effect as pressing \keystroke{Canc}). & 
+\\	
+\midrule
+\texttt{\_explode} & & Splits an object into separate parts (opposite effect than \texttt{\_join}). & 
+\\	
+\midrule
+\texttt{\_extend} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_extend.jpg} & Extends objects to meet the edges of other objects.  & 
+\\	
+\midrule
+\texttt{\_fillet} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_fillet.jpg} & Fillets the edges of two 2D objects by creating an arc of given radius. The two edges (or their extensions) must intersect & 
+\param{RA}: Sets the fillet radius.
+\\
+\midrule
+\texttt{\_intersect} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_intersect.jpg} & Returns the intersection (Boolean \texttt{AND}) between two closed objects. The objects must be previously converted into regions through \texttt{\_region}. & 
+\\
+\midrule
+\texttt{\_join} & & Joins lines, polylines, splines and adjacent arcs (opposite effect than \texttt{\_explode}). & 
+\\
+\midrule
+\texttt{\_mirror} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_mirror.jpg} & Mirrors objects across a given axis. & 
+\param{N}: Keeps the source objects (creates a copy).
+
+\param{S}: Removes the source objects.
+\\		
+\midrule
+\texttt{\_move} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_move.jpg} & Moves objects. & 
+\param{S}: Sets the displacement vector.
+\\			
+\midrule
+\texttt{\_offset} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_offset.jpg} & Offsets an object at a specified distance.  & 
+\\			
+\midrule
+\texttt{\_rotate} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_rotate.jpg} & Rotates objects. & 
+\param{C}: Keeps the original objects (creates a copy).
+\\	
+\midrule
+\texttt{\_scale} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_scale.jpg} & Applies a scale transform. & 
+\param{C}: Keeps the original objects (creates a copy).
+\\	
+\midrule
+\texttt{\_subtract} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_subtract.jpg} & Returns the difference (Boolean \texttt{XOR}) between two closed objects. The objects must be previously converted into regions through \texttt{\_region}. & 
+\\
+\midrule
+\texttt{\_trim} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_trim.jpg} & Trims objects to meet the edges of other objects.  & 
+\\	
+\midrule
+\texttt{\_union} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_union.jpg} & Returns the union (Boolean \texttt{OR}) between two closed objects. The objects must be previously converted into regions through \texttt{\_region}. & 
+\\
+\bottomrule
+\end{longtable}
+\end{center}
+
+\clearpage
+
+\section{Inserting dimensions and managing their style}
+
+\begin{center}
+\begin{longtable}{m{.2\linewidth}m{.2\linewidth}m{.25\linewidth}m{.25\linewidth}}
+\toprule
+    \multicolumn{2}{c}{\bfseries Command} &
+    \multicolumn{1}{c}{\bfseries Action} &
+    \multicolumn{1}{c}{\bfseries Main parameters} \\
+\midrule
+\texttt{\_dimlinear} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_dimlinear.jpg} & Creates a linear dimension parallel to one of the axes of the UCS. & 
+\\
+\midrule
+\texttt{\_dimaligned} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_dimaligned.jpg} & Creates a linear dimension that is aligned with the origin points of the extension lines. & 
+\\
+\midrule
+\texttt{\_dimdiameter} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_dimdiameter.jpg} & Creates a diameter dimension with a diameter symbol ($\phi$) in front of it. & 
+\\
+\midrule
+\texttt{\_dimradius} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_dimradius.jpg} & Creates a radius dimension with a radius symbol (\texttt{R}) in front of it. & 
+\\
+\midrule
+\texttt{\_dimstyle} & & Opens the window that allows to manage the dimension style. & 
+\\
+\bottomrule
+\end{longtable}
+\end{center}
+
+\clearpage
+
+\section{Inserting text and annotations}
+
+\begin{center}
+\begin{longtable}{m{.2\linewidth}m{.2\linewidth}m{.25\linewidth}m{.25\linewidth}}
+\toprule
+    \multicolumn{2}{c}{\bfseries Command} &
+    \multicolumn{1}{c}{\bfseries Action} &
+    \multicolumn{1}{c}{\bfseries Principali parametri} \\
+\midrule
+\texttt{\_mtext} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_mtext.jpg} & Inserts multi-line text. & 
+\param{H}: Specifies the text height.
+
+\param{J}: Sets text justification and flow in relation to the text boundary (see \texttt{\_text}).
+
+\param{W}: Specifies the width of the text boundary.
+\\
+\midrule
+\texttt{\_qleader} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_qleader.jpg} & Creates a leader and leader annotation. \\
+\midrule
+\texttt{\_text} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_text.jpg} & Inserts single-line text. & 
+\param{J}: Sets text justification and flow in relation to the text boundary. Possible options:
+\begin{itemize}
+\item \param{TL} (Top left)
+\item \param{TC} (Top centre)
+\item \param{TR} (Top right)
+\item \param{ML} (Middle left)
+\item \param{MC} (Middle centre)
+\item \param{MR} (Middle right)
+\item \param{BL} (Bottom left)
+\item \param{BC} (Bottom centre)
+\item \param{BR} (Bottom right)
+\end{itemize}
+\item \param{W} Specifies the width of the text boundary; words wrap to fit the width.
+\\
+\midrule
+\texttt{\_tolerance} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_tolerance.jpg} & Creates symbols for geometric tolerances and datums. \\
+\midrule
+\texttt{\_centerline} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_centerline.jpg} & Draws the axis between two parallel or non-parallel lines. & 
+\\
+\midrule
+\texttt{\_centermark} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_centermark.jpg} & Draws the centre mark of a circle or arc. & 
+\\
+\bottomrule
+\end{longtable}
+\end{center}
+
+\subsection{Inserting special characters}
+
+\vspace{\baselineskip}
+
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Property name} & \textbf{Symbol} & \textbf{AutoCAD sequence} & \textbf{Unicode sequence}\\
+\midrule
+Diameter & \o & \%\%c & \textbackslash U+00B0 \\
+\midrule
+Envelope requirement & \circled{E} & -- & \textbackslash U+24BA \\
+\midrule
+Degrees & $^{\circ}$ & \%\%d & \textbackslash U+2205 \\
+\midrule
+Plus/minus & $^{\pm}$ & \%\%p & \textbackslash U+00B1  \\
+\midrule
+Square & $\msquare$ & -- & \textbackslash U+25A1 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent
+ 
+
+\subsection{Inserting special characters via \texttt{gdt} font}
+
+\vspace{\baselineskip}
+
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Property name} & \textbf{Symbol} & \textbf{AutoCAD sequence} \\
+\midrule
+Diameter & \o & n \\
+\midrule
+Square & $\msquare$ & o \\
+\midrule
+\raisebox{0pt}{Counterbore} & \includegraphics[width = 10pt, keepaspectratio]{../images/jpg/hole-counterbore.jpg} & \raisebox{0pt}{v} \\
+\midrule
+\raisebox{0pt}{Countersink} & \includegraphics[width = 10pt, keepaspectratio]{../images/jpg/hole-countersink.jpg} & \raisebox{0pt}{w} \\
+\midrule
+\raisebox{5pt}{Deep/Depth} & \includegraphics[width = 10pt, keepaspectratio]{../images/jpg/hole-depth.jpg} & \raisebox{5pt}{x} \\
+\midrule
+Taper & \includegraphics[height=\fontcharht\font`\B, keepaspectratio]{../images/jpg/GDandT_Conical_Taper_Symbol.jpg} & y \\
+\midrule
+Maximum material requirement & \circled{M} & m \\
+\midrule
+Minimum material requirement & \circled{L} & l \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\clearpage
+
+\section{Managing user interface, system variables and object properties}
+\begin{center}
+\begin{longtable}{m{.2\linewidth}m{.33\linewidth}m{.33\linewidth}}
+\toprule
+    \multicolumn{1}{c}{\bfseries Command} &
+    \multicolumn{1}{c}{\bfseries Action} &
+    \multicolumn{1}{c}{\bfseries Main parameters} \\
+\midrule
+\texttt{\_dynmode} & Sets the dynamic input mode. & 
+\param{1}: Turns dynamic input on.
+
+\param{0}: Turns dynamic input off.
+\\
+\midrule
+\texttt{\_layer} & Opens the window for creating, deleting and modifying layers. & 
+\\
+\midrule
+\texttt{\_matchprop} & Applies the properties of a selected object to other objects (similar to paste format in Microsoft Word). & 
+\\
+\midrule
+\texttt{\_navbardisplay} & Controls the display of the navigation bar. & 
+\param{1}: Displays the navigation bar.
+
+\param{0}: Hides the navigation bar.
+\\
+\midrule
+\texttt{\_orthomode} & Constrains cursor movement parallel to UCS axes. & 
+\param{1}: Turns orthogonal mode on.
+
+\param{0}: Turns orthogonal mode off.
+\\
+\midrule
+\texttt{\_osnap} & Opens the window for managing object snaps. & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/png/_osnap.png}
+\\
+\midrule
+\texttt{\_polarang} & Sets the polar angle increment for tracking. & 
+\param{0}: No polar tracking.
+
+\param{]0,90]}: Polar tracking by steps of the given value.
+\\
+\midrule
+\texttt{\_ptype} & Opens the window for setting the display style and size of point objects.  & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/png/_ptype.png} 
+\\
+\midrule
+\texttt{\_qselect} & Selects objects based on filtering criteria. & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/png/_qselect.png} 
+\\
+\midrule
+\texttt{\_regen} & Regenerates the drawing in the current viewport. Recomputes the locations and visibility of all objects in the current viewport. & 
+\\
+\midrule
+\texttt{\_redraw} & Refreshes the display in the current viewport. & 
+\\
+\midrule
+\texttt{\_ucs} & Sets the origin and orientation of the UCS. & 
+\\
+\midrule
+\texttt{\_ucsicon} & Controls the appearance of the UCS icon. & 
+\param{ON}: Shows UCS icon.
+
+\param{OF}: Hides UCS icon.
+
+\param{OR}: Displays the icon at the origin (0,0,0) of the UCS.
+\\
+\midrule
+\texttt{\_units} & Opens the dialogue box to control format, precision and other settings used to display coordinates, distances and angles.
+\\
+\bottomrule
+\end{longtable}
+\end{center}
+
+\clearpage
+
+\section{Keyboard shortcuts}
+
+\begin{center}
+\begin{longtable}{m{.2\textwidth}m{.7\textwidth}m{.1\textwidth}}
+\toprule
+    \multicolumn{1}{c}{\bfseries Key} &
+    \multicolumn{1}{c}{\bfseries Function(s)}\\
+\midrule
+\keystroke{Canc} & Deletes the selected objects. \\
+\midrule
+\keystroke{Ctrl}+\keystroke{B} & Turns the grid snap on/off. \\
+\midrule
+\keystroke{Ctrl}+\keystroke{O} & Opens an existing document. \\
+\midrule
+\keystroke{Ctrl}+\keystroke{Q} & Closes the applications. \\
+\midrule
+\keystroke{Ctrl}+\keystroke{Z} & Undoes the previous action. \\
+\midrule
+\keystroke{Ctrl}+\keystroke{Y} & Redoes the previous action (reverses a previous undo). \\
+\midrule
+\keystroke{Ctrl}+\keystroke{9} & Hides/displays the command line. \\
+\midrule
+\keystroke{Esc} & 
+Exits a command. 
+
+Deselects all objects.
+\\
+\midrule
+\keystroke{Invio} & 
+Finalises a command, the input of a parameter or the selection of objects within one command. 
+
+Repeats the latest command.
+\\
+\midrule
+\keystroke{F3} & 
+Turns object snap on/off.\\
+\midrule
+\keystroke{F8} & 
+Turns orthogonal mode on/off.\\
+\midrule
+\keystroke{F10} & 
+Turns polar tracking on/off.\\
+\midrule
+\keystroke{F11} & 
+Turns object snap tracking on/off.\\
+\midrule
+\keystroke{F12} & 
+Turns dynamic mode on (but not off).\\
+\midrule
+\keystroke{$\Uparrow$}, \keystroke{Shift} &
+Removes objects from the current selection if pressed or held down while selecting objects. \\
+\bottomrule
+\end{longtable}
+\end{center}
+
+\end{document}
