@@ -86,7 +86,7 @@ Local & \multicolumn{1}{c}{@$x$,$y$} & \multicolumn{1}{c}{@$\rho<\theta$} \\
 \begin{longtable}{m{.1\linewidth}m{.2\linewidth}m{.3\linewidth}m{.3\linewidth}}
 \toprule
     \multicolumn{2}{c}{\bfseries Command} &
-    \multicolumn{1}{c}{\bfseries Action} &
+    \multicolumn{1}{c}{\bfseries Effect} &
     \multicolumn{1}{c}{\bfseries Main parameters} \\
 \midrule
 \texttt{\_arc} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_arc.jpg}
@@ -117,7 +117,7 @@ Local & \multicolumn{1}{c}{@$x$,$y$} & \multicolumn{1}{c}{@$\rho<\theta$} \\
 \\
 \midrule
 \texttt{\_line} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_line.jpg} & Generates a single line or a polyline. & 
-\param{C}: Closes the polyline (only active when there the polyline has at least three points). \\
+\param{C}: Closes the polyline (only available when there the polyline has at least three points). \\
 \midrule
 \texttt{\_point} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_point.jpg} & Generates one point. &  \\	
 \midrule
@@ -146,7 +146,7 @@ Local & \multicolumn{1}{c}{@$x$,$y$} & \multicolumn{1}{c}{@$\rho<\theta$} \\
 \begin{longtable}{m{.2\linewidth}m{.2\linewidth}m{.25\linewidth}m{.25\linewidth}}
 \toprule
     \multicolumn{2}{c}{\bfseries Command} &
-    \multicolumn{1}{c}{\bfseries Action} &
+    \multicolumn{1}{c}{\bfseries Effect} &
     \multicolumn{1}{c}{\bfseries Main parameters} \\
 \midrule
 \texttt{\_arrayclassic} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_arrayclassic.jpg} & Creates copies of objects along a linear or circular array. & 
@@ -170,7 +170,7 @@ Local & \multicolumn{1}{c}{@$x$,$y$} & \multicolumn{1}{c}{@$\rho<\theta$} \\
 \texttt{\_extend} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_extend.jpg} & Extends objects to meet the edges of other objects.  & 
 \\	
 \midrule
-\texttt{\_fillet} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_fillet.jpg} & Fillets the edges of two 2D objects by creating an arc of given radius. The two edges (or their extensions) must intersect & 
+\texttt{\_fillet} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_fillet.jpg} & Fillets the edges of two 2D objects by creating an arc of given radius. The two edges (or their extensions) must intersect. & 
 \param{RA}: Sets the fillet radius.
 \\
 \midrule
@@ -190,7 +190,7 @@ Local & \multicolumn{1}{c}{@$x$,$y$} & \multicolumn{1}{c}{@$\rho<\theta$} \\
 \param{S}: Sets the displacement vector.
 \\			
 \midrule
-\texttt{\_offset} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_offset.jpg} & Offsets an object at a specified distance.  & 
+\texttt{\_offset} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_offset.jpg} & Offsets an object to a given distance.  & 
 \\			
 \midrule
 \texttt{\_rotate} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_rotate.jpg} & Rotates objects. & 
@@ -221,7 +221,7 @@ Local & \multicolumn{1}{c}{@$x$,$y$} & \multicolumn{1}{c}{@$\rho<\theta$} \\
 \begin{longtable}{m{.2\linewidth}m{.2\linewidth}m{.25\linewidth}m{.25\linewidth}}
 \toprule
     \multicolumn{2}{c}{\bfseries Command} &
-    \multicolumn{1}{c}{\bfseries Action} &
+    \multicolumn{1}{c}{\bfseries Effect} &
     \multicolumn{1}{c}{\bfseries Main parameters} \\
 \midrule
 \texttt{\_dimlinear} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_dimlinear.jpg} & Creates a linear dimension parallel to one of the axes of the UCS. & 
@@ -250,7 +250,7 @@ Local & \multicolumn{1}{c}{@$x$,$y$} & \multicolumn{1}{c}{@$\rho<\theta$} \\
 \begin{longtable}{m{.2\linewidth}m{.2\linewidth}m{.25\linewidth}m{.25\linewidth}}
 \toprule
     \multicolumn{2}{c}{\bfseries Command} &
-    \multicolumn{1}{c}{\bfseries Action} &
+    \multicolumn{1}{c}{\bfseries Effect} &
     \multicolumn{1}{c}{\bfseries Principali parametri} \\
 \midrule
 \texttt{\_mtext} & \includegraphics[width = 0.8\linewidth, keepaspectratio]{../images/jpg/_mtext.jpg} & Inserts multi-line text. & 
@@ -350,7 +350,7 @@ Minimum material requirement & \circled{L} & l \\
 \begin{longtable}{m{.2\linewidth}m{.33\linewidth}m{.33\linewidth}}
 \toprule
     \multicolumn{1}{c}{\bfseries Command} &
-    \multicolumn{1}{c}{\bfseries Action} &
+    \multicolumn{1}{c}{\bfseries Effect} &
     \multicolumn{1}{c}{\bfseries Main parameters} \\
 \midrule
 \texttt{\_dynmode} & Sets the dynamic input mode. & 
@@ -431,7 +431,7 @@ Minimum material requirement & \circled{L} & l \\
 \midrule
 \keystroke{Ctrl}+\keystroke{O} & Opens an existing document. \\
 \midrule
-\keystroke{Ctrl}+\keystroke{Q} & Closes the applications. \\
+\keystroke{Ctrl}+\keystroke{Q} & Closes the application. \\
 \midrule
 \keystroke{Ctrl}+\keystroke{Z} & Undoes the previous action. \\
 \midrule
